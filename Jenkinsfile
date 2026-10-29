@@ -20,6 +20,12 @@ pipeline {
                 checkout scm
             }
         }
+         stage('Deploy with Docker Compose') {
+            steps {
+            bat "docker-compose down --remove-orphans"
+            bat "docker-compose up -d --build"
+             }
+        }
 
         stage('Build Docker Image') {
             steps {
