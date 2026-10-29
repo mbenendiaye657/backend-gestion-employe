@@ -3,12 +3,12 @@ pipeline {
     // agent any
 
     agent {
-        label 'agent-windows'  
+        label 'MI_AG'  
        
     }
 
     environment {
-        DOCKERHUB_USER = "ditdevops1"
+        DOCKERHUB_USER = "mbenend"
         IMAGE_NAME     = "backend-employe"
         IMAGE_TAG      = "1.${BUILD_NUMBER}"
     }
